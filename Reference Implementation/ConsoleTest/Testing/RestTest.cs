@@ -34,7 +34,7 @@ namespace ConsoleTest.Testing
 
 		public async Task RunTest()
 		{
-			//Credentials.SetCredentials(EEnvironment.Practice, "SOME_TOKEN", 12345);
+			Credentials.SetCredentials(EEnvironment.Practice, Properties.Settings.Default.accessToken, Properties.Settings.Default.defaultAccount);
 
 			if (Credentials.GetDefaultCredentials() == null)
 			{
