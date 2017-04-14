@@ -39,7 +39,7 @@ namespace OANDARestLibrary.TradeLibrary
 			_response = await GetSession();
 			
 
-			Task.Run(() =>
+			await Task.Run(() =>
 				{
 					DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T));
 					StreamReader reader = new StreamReader(_response.GetResponseStream());

@@ -361,7 +361,7 @@ namespace ConsoleTest.Testing
 		private async Task RunRatesTest()
 		{
 			await RunPricesTest();
-			new CandlesTest(_results).Run();
+			await new CandlesTest(_results).Run();
 		}
 
 		

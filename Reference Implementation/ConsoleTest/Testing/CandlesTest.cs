@@ -30,16 +30,16 @@ namespace ConsoleTest.Testing
 			// Setup minimum requirements
 			Func<CandlesRequest> request = () => new CandlesRequest {instrument = "EUR_USD"};
 			// This handles the unmodified, and all defaults
-			RunBasicTests(request);
+			await RunBasicTests(request);
 			
 			// test count max
-			TestCount(request, 5000, false, "Retrieved max candles");
+			await TestCount(request, 5000, false, "Retrieved max candles");
 			// test count max + 1
-			TestCount(request, 5001, true, "Exceeded max candles");
+			await TestCount(request, 5001, true, "Exceeded max candles");
 			// test count min
-			TestCount(request, 1, false, "Retrieved min candles");
+			await TestCount(request, 1, false, "Retrieved min candles");
 			// test count min - 1
-			TestCount(request, 0, true, "Below min candles");
+			await TestCount(request, 0, true, "Below min candles");
 		}
 
 		public async Task RunBasicTests(Func<CandlesRequest> request)
